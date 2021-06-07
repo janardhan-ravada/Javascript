@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <script>
+      var timeoutHolder;
+      function sendRequest() {
+        /*console.log("Sending request");*/
+        if (timeoutHolder) {
+          clearTimeout(timeoutHolder);
+        }
+        timeoutHolder = setTimeout(function () {
+          console.log("Sending request");
+        }, 500);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="app">
+      <label for="name">Enter Name</label>
+      <input type="text" name="name" id="name" onkeyup="sendRequest()" />
+      <div id="msg"></div>
+    </div>
+  </body>
+</html>
